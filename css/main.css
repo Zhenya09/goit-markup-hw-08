@@ -675,11 +675,11 @@ body {
 }
 
 .modal-checkbox-custom {
-  width: 16px;
+  width: 15px;
   height: 15px;
-  margin-right: 8px;
+  margin-right: 10px;
   border: 2px solid #2a2a2a;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .modal-checkbox-icon {
