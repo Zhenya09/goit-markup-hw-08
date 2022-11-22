@@ -1,188 +1,141 @@
 .footer {
-    background: #2F303A;
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
+  padding: 60px 0;
+  letter-spacing: 0.03em;
+  background-color: var(--footer-background-color);
 
-.adress-part{
-    display: flex;
-    align-items: baseline
-}
-
-.footer__address {
-    font-style: normal;
-    margin-top: 20px;
-}
-
-.footer__list {
-    display: inline;
-}
-
-.footer__logo {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
-    letter-spacing: 0.03em;
-    color: #FFFFFF;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.footer-span-logo {
-    color: #2196F3;
-}
-
-.list-footer:not(:last-child) {
-    margin-bottom: 9px;
-
-}
-
-.footer__list__gps {
-    margin-bottom: 9px;
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
-    color: #FFFFFF;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-}
-
-.footer__list__mail {
-    margin-bottom: 9px;
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
-    color: rgba(255, 255, 255, 0.6);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.footer__list__tel {
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
-    color: rgba(255, 255, 255, 0.6);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-.social__container__title {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-}
-
-.footer__soc__iten {
-    width: 44px;
-    height: 44px;
-}
-
-.footer__soc__link {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+  &__container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    fill: #FFFFFF;
-    background: rgba(255, 255, 255, 0.1);
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover,
-    &:focus {
-            background-color: #2196F3;
-            fill: #FFFFFF;
-        }
-}
-
-.footer__soc {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.social__container {
-    margin-left: 70px;
-}
-
-.mailing {
-    margin-left: 93px;
-    display: block;
-}
-
-.mailing__title {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-}
-
-.mailing__footer {
+    flex-direction: column;
     text-align: center;
-    position: relative;
-    display: flex;
+    gap: 60px;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: center;
+      row-gap: 60px;
+      column-gap: 165px;
+    }
+
+    @include desktop {
+      gap: 93px;
+      justify-content: space-between;
+      text-align: start;
+    }
+  }
+
+  &__contacts {
+    margin-top: 20px;
+
+    @include font(null, null, calc(24 / 14), null);
+
+    &-item:not(:last-child) {
+      margin-bottom: 8px;
+      // margin-bottom: 9px;
+    }
+
+    &-link {
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover,
+      &:focus {
+        color: var(--accent-color);
+      }
+
+      &--map {
+        color: var(--white-color);
+      }
+    }
+  }
 }
 
-.mailing__list__mail {
-    background: #2F303A;
-    box-sizing: border-box;
-    width: 358px;
-    height: 50px;
-    left: 815px;
-    top: 2784px;
+.box {
+  // margin-left: 70px;
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include font(700, null, calc(16 / 14), null);
+    text-transform: uppercase;
+    color: var(--white-color);
+
+    &--form-label {
+      display: block;
+    }
+  }
+}
+
+.soc-list__link--footer {
+  color: var(--white-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form {
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: column;
+    }
+    
+    @include desktop {
+      flex-direction: row;
+  }
+  }
+
+  &__input {
+    padding: 15px 16px;
+    width: 100%;
+
+    @include font(null, 16px, calc(20 / 16), 0.03em);
+    color: var(--white-color);
+    background-color: var(--footer-background-color);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
-    transition-property: transform, filter;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    margin-right: 12px;
-    &:focus {
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-            border: 1px solid #2196F3;
-        }
-}
 
-.mailing__list__btn {
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @include tablet {
+      width: 450px;
+    }
+
+    @include desktop {
+      width: 358px;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus {
+      border-color: var(--accent-color);
+    }
+  }
+
+  &__button {
     display: flex;
-    padding-top: 5px;
-    padding-right: 28px;
-    padding-bottom: 5px;
-    padding-left: 28px;
-    left: 1185px;
-    top: 2784px;
-    background: #2196F3;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 2.4;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    letter-spacing: 0.06em;
-    color: #FFFFFF;
-    padding-right: 40px;
-    transition-property: box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover,
-    &:focus {
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-        }
-}
-
-.mailing__list__icon {
-    fill: #FFFFFF;
-    margin-left: 10px;
+    gap: 10px;
+    margin-top: 20px;
+    // margin-left: 12px;
+    padding: 10px 28px;
+    
+    @include desktop {
+      margin-top: 0;
+      margin-left: 12px;
+      
+    }
+    &-icon {
+      fill: currentColor;
+    }
+  }
 }
